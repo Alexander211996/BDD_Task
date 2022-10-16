@@ -99,9 +99,9 @@ public class transferTests {
     }
 
     @Test
-    void shouldNotTransferNegativeSum () {
+    void shouldNotTransferNull () {
         val dashBoardPage = new DashboardPage();
-        int transferSum = -40000;
+        int transferSum = 0;
         dashBoardPage.transferToFirstCard();
         val transferPage = new TransferPage();
         transferPage.transferFromSecondToFirst(transferSum);
