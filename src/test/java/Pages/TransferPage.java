@@ -15,7 +15,6 @@ public class TransferPage {
     private SelenideElement error = $("[data-test-id=error-notification]");
 
     public DashboardPage transferFromSecondToFirst (int sum) {
-        val dashBoardPage = new DashboardPage();
         amount.setValue(String.valueOf(sum));
         from.setValue(DataHelper.getSecondCard().getCardNumber());
         transferButton.click();
@@ -23,10 +22,14 @@ public class TransferPage {
     }
 
     public DashboardPage transferFromFirstToSecond (int sum) {
-        val dashBoardPage = new DashboardPage();
         amount.setValue(String.valueOf(sum));
         from.setValue(DataHelper.getFirstCard().getCardNumber());
         transferButton.click();
-        return new DashboardPage();}
+        return new DashboardPage();
+    }
+
+    public void shouldExecuteError () {
+        error.shouldBe(Condition.visible);
+    }
 
 }

@@ -87,4 +87,24 @@ public class transferTests {
         assertEquals(firstCardExpectedBalance, firstCardFinalBalance);
         assertEquals(secondCardExpectedBalance, secondCardFinalBalance);
     }
+
+    @Test
+    void shouldNotTransferMoneyIfNotEnoughMoney () {
+        val dashBoardPage = new DashboardPage();
+        int transferSum = 40000;
+        dashBoardPage.transferToFirstCard();
+        val transferPage = new TransferPage();
+        transferPage.transferFromSecondToFirst(transferSum);
+        transferPage.shouldExecuteError();
+    }
+
+    @Test
+    void shouldNotTransferNegativeSum () {
+        val dashBoardPage = new DashboardPage();
+        int transferSum = -40000;
+        dashBoardPage.transferToFirstCard();
+        val transferPage = new TransferPage();
+        transferPage.transferFromSecondToFirst(transferSum);
+        transferPage.shouldExecuteError();
+    }
 }
