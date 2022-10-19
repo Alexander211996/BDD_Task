@@ -1,4 +1,4 @@
-package Data;
+package data;
 
 import lombok.Value;
 
@@ -10,7 +10,7 @@ public class DataHelper {
         private String password;
     }
 
-    public static AuthInfo getAuthInfo () {
+    public static AuthInfo getAuthInfo() {
         return new AuthInfo("vasya", "qwerty123");
 
     }
@@ -20,7 +20,7 @@ public class DataHelper {
         private String code;
     }
 
-    public static VerificationCode getVerificationCode (AuthInfo authInfo) {
+    public static VerificationCode getVerificationCode(AuthInfo authInfo) {
         return new VerificationCode("12345");
     }
 
@@ -31,11 +31,11 @@ public class DataHelper {
     }
 
 
-    public static CardInfo getFirstCard(){
+    public static CardInfo getFirstCard() {
         return new CardInfo("0001", "5559 0000 0000 0001");
     }
 
-    public static CardInfo getSecondCard(){
+    public static CardInfo getSecondCard() {
         return new CardInfo("0002", "5559 0000 0000 0002");
     }
 

@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Data.DataHelper;
+import data.DataHelper;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -21,10 +21,10 @@ public class DashboardPage {
         heading.shouldBe(Condition.visible);
     }
 
-    public int getCardBalance (DataHelper.CardInfo cardInfo) {
+    public int getCardBalance(DataHelper.CardInfo cardInfo) {
         String id = cardInfo.getId();
-        SelenideElement card = $ (withText(id));
-        val text =card.text();
+        SelenideElement card = $(withText(id));
+        val text = card.text();
         return extractBalance(text);
     }
 
@@ -36,16 +36,16 @@ public class DashboardPage {
     }
 
 
-        private ElementsCollection transferButtons = $$("[data-test-id='action-deposit']");
-        private SelenideElement transferToFirstCardButton = transferButtons.first();
-        private SelenideElement transferToSecondCardButton = transferButtons.last();
+    private ElementsCollection transferButtons = $$("[data-test-id='action-deposit']");
+    private SelenideElement transferToFirstCardButton = transferButtons.first();
+    private SelenideElement transferToSecondCardButton = transferButtons.last();
 
-        public void transferToFirstCard() {
-            transferToFirstCardButton.click();
-        }
+    public void transferToFirstCard() {
+        transferToFirstCardButton.click();
+    }
 
-        public void transferToSecondCard() {
-            transferToSecondCardButton.click();
-        }
+    public void transferToSecondCard() {
+        transferToSecondCardButton.click();
+    }
 
 }

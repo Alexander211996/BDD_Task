@@ -1,4 +1,4 @@
-image: Ubuntu 
+image: Ubuntu
 
 stack: jdk 11
 

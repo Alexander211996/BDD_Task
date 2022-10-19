@@ -1,7 +1,8 @@
-package Pages;
+package pages;
 
-import Data.DataHelper;
+import data.DataHelper;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
@@ -9,7 +10,7 @@ public class LoginPage {
     private SelenideElement passwordField = $("[data-test-id='password'] input");
     private SelenideElement loginButton = $("[data-test-id='action-login']");
 
-    public VerificationPage validLogin (DataHelper.AuthInfo info) {
+    public VerificationPage validLogin(DataHelper.AuthInfo info) {
         loginField.setValue(info.getLogin());
         passwordField.setValue(info.getPassword());
         loginButton.click();
